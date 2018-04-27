@@ -1,0 +1,14 @@
+elpa/
+auto-save-list/
+*.elc
+.graphene-geometry
+.nw-geometry
+projectile-bookmarks.eld
+/*.cache
+/smex-items
+/url/cookies
+/bookmarks
+/cider-history
+.cask
+/recentf
+*~
