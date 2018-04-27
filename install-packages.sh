@@ -1,3 +1,4 @@
+git subtree add --squash --prefix lisp/use-package https://github.com/jwiegley/use-package.git master
 git subtree add --squash --prefix lisp/swiper https://github.com/abo-abo/swiper.git master
 git subtree add --squash --prefix lisp/all-the-icons.el https://github.com/domtronn/all-the-icons.el.git master
 git subtree add --squash --prefix lisp/dash.el https://github.com/magnars/dash.el.git master
