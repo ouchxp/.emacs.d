@@ -6,3 +6,5 @@ git subtree add --squash --prefix lisp/emacs-bind-map https://github.com/justbur
 git subtree add --squash --prefix lisp/evil https://github.com/emacs-evil/evil.git master
 git subtree add --squash --prefix lisp/exec-path-from-shell https://github.com/purcell/exec-path-from-shell.git master
 git subtree add --squash --prefix lisp/doom-themes https://github.com/hlissner/emacs-doom-themes.git master
+git subtree add --squash --prefix lisp/emacs-which-key https://github.com/justbur/emacs-which-key.git v3.0.2
+git subtree add --squash --prefix lisp/rainbow-delimiters https://github.com/Fanael/rainbow-delimiters.git master

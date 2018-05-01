@@ -1,5 +1,7 @@
 (require 'dash)
 
+(show-paren-mode 1)
+
 (defvar nw-default-font nil
   "The universal default font.")
 

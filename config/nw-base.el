@@ -53,4 +53,24 @@
 
 (use-package nw-modeline)
 
+;; which-key
+(use-package which-key
+  :config
+  (setq which-key-idle-delay 0.2)
+  ;; (which-key-add-key-based-replacements
+  ;;   "M-m g" "git"
+  ;;   "M-m l" "layouts"
+  ;;   "M-m m" "major-mode-hydra"
+  ;;   "M-m p" "projects"
+  ;;   "M-m t" "toggles"
+  ;;   "M-m w" "workspace")
+  (which-key-mode))
+
+;; rainbow delimiters
+(use-package rainbow-delimiters
+  :ensure t
+  :init
+  (progn
+    (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)))
+
 (provide 'nw-base)

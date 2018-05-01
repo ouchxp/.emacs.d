@@ -133,11 +133,11 @@ If argument INTERACTIVE-P is set, log additional information."
  '(safe-local-variable-values
    (quote
     ((eval progn
-           (aggressive-indent-mode -1)
-           (define-clojure-indent
-             (expect 0)
-             (expect-search 0)
-             (expect-next 0)))))))
+	   (aggressive-indent-mode -1)
+	   (define-clojure-indent
+	     (expect 0)
+	     (expect-search 0)
+	     (expect-next 0)))))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
