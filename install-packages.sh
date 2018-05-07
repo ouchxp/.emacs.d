@@ -8,3 +8,6 @@ git subtree add --squash --prefix lisp/exec-path-from-shell https://github.com/p
 git subtree add --squash --prefix lisp/doom-themes https://github.com/hlissner/emacs-doom-themes.git master
 git subtree add --squash --prefix lisp/emacs-which-key https://github.com/justbur/emacs-which-key.git v3.0.2
 git subtree add --squash --prefix lisp/rainbow-delimiters https://github.com/Fanael/rainbow-delimiters.git master
+git subtree add --squash --prefix lisp/projectile https://github.com/bbatsov/projectile.git master
+git subtree add --squash --prefix lisp/counsel-projectile https://github.com/ericdanan/counsel-projectile.git master
+git subtree add --squash --prefix lisp/ibuffer-projectile https://github.com/purcell/ibuffer-projectile master
