@@ -79,6 +79,7 @@ If argument INTERACTIVE-P is set, log additional information."
 (use-package nw-base)
 (use-package nw-evil)
 (use-package nw-ivy)
+(use-package nw-projectile)
 
 ;(use-package jp-smartparens)
 ;(use-package jp-ivy)

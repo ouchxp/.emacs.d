@@ -1,6 +1,7 @@
 (eval-when-compile
   (require 'use-package))
 
+(use-package nw-emacs)
 
 (use-package exec-path-from-shell
   :if (memq window-system '(mac ns x))
@@ -16,7 +17,6 @@
     (setq nw-default-font "Menlo-12")
     (setq nw-variable-pitch-font "Lucida Grande-12")
     (setq nw-fixed-pitch-font "Menlo-12")))
-
 
 ;;; why is this not working
 ;(use-package all-the-icons)
