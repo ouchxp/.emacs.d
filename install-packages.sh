@@ -11,3 +11,6 @@ git subtree add --squash --prefix lisp/rainbow-delimiters https://github.com/Fan
 git subtree add --squash --prefix lisp/projectile https://github.com/bbatsov/projectile.git master
 git subtree add --squash --prefix lisp/counsel-projectile https://github.com/ericdanan/counsel-projectile.git master
 git subtree add --squash --prefix lisp/ibuffer-projectile https://github.com/purcell/ibuffer-projectile master
+git subtree add --squash --prefix lisp/eyebrowse https://github.com/wasamasa/eyebrowse.git master
+git subtree add --squash --prefix lisp/hydra https://github.com/abo-abo/hydra.git master
+git subtree add --squash --prefix lisp/major-mode-hydra.el https://github.com/jerrypnz/major-mode-hydra.el.git milestone-1
