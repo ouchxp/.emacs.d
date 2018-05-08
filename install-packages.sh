@@ -14,3 +14,4 @@ git subtree add --squash --prefix lisp/ibuffer-projectile https://github.com/pur
 git subtree add --squash --prefix lisp/eyebrowse https://github.com/wasamasa/eyebrowse.git master
 git subtree add --squash --prefix lisp/hydra https://github.com/abo-abo/hydra.git master
 git subtree add --squash --prefix lisp/major-mode-hydra.el https://github.com/jerrypnz/major-mode-hydra.el.git master
+git subtree add --squash --prefix lisp/s https://github.com/magnars/s.el.git 1.12.0
