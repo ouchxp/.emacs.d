@@ -68,6 +68,7 @@
       "SPC h d" "describe"
       "SPC h f" "find"
       "SPC k"   "kill"
+      "SPC l"   "layout"
       "SPC n"   "narrow"
       "SPC o"   "org"
       "SPC p"   "project"
@@ -167,7 +168,7 @@
       "w =" #'balance-windows
       "w w" #'evil-window-next
       "w o" #'delete-other-windows
-      "w q" #'delete-window
+      "w d" #'delete-window
       "w r" #'evil-window-rotate-downwards
       "w -" #'evil-window-split
       "w /" #'evil-window-vsplit)))

@@ -80,13 +80,14 @@ If argument INTERACTIVE-P is set, log additional information."
 (use-package nw-evil)
 (use-package nw-ivy)
 (use-package nw-projectile)
+(use-package nw-eyebrowse)
 
 ;(use-package jp-smartparens)
 ;(use-package jp-ivy)
 ;(use-package jp-company)
 ;(use-package jp-flycheck)
 ;(use-package jp-projectile)
-;(use-package jp-eyebrowse)
+;
 ;(use-package jp-magit)
 ;(use-package jp-restclient)
 ;(use-package jp-yasnippet)

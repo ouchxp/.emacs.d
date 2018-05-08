@@ -25,7 +25,9 @@
     (eyebrowse-mode t)))
 
 (use-package nw-layouts
-  :bind
-  ("M-m l" . nw-layouts/body))
+  :init
+  (progn
+    (spacemacs-keys-set-leader-keys
+      "l" #'nw-layouts/body)))
 
 (provide 'nw-eyebrowse)
