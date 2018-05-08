@@ -114,4 +114,8 @@
 (add-hook 'after-init-hook 'nw-look-startup-after-init)
 
 
+(use-package dimmer
+  :config
+  (dimmer-mode))
+
 (provide 'nw-look)
