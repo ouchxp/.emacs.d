@@ -1,6 +1,7 @@
 (require 'dash)
 
 (show-paren-mode 1)
+(global-linum-mode t)
 
 (defvar nw-default-font nil
   "The universal default font.")
