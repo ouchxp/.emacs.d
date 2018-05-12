@@ -17,7 +17,7 @@
 
 (use-package magit
   :defer t
-  :commands (magit-status magit-blame magit-branch-and-checkout)
+  :commands (magit-status magit-blame magit-branch-and-checkout magit-dispatch-popup)
   :functions (magit-display-buffer-fullframe-status-v1)
   :preface
   (evil-transient-state-define git-blame
@@ -35,6 +35,7 @@ Press [_b_] again to blame further in the history, [_q_] to go up or quit."
   (progn
     (spacemacs-keys-set-leader-keys
       "gs" #'magit-status
+      "gm" #'magit-dispatch-popup
       "gb" #'git-blame-transient-state/body))
   :config
   (progn
