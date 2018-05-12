@@ -131,7 +131,6 @@ should be a string suitable for `kbd'."
 (defvar evil-magit-untouched-modes
   '(git-popup-mode
     magit-blame-mode
-    magit-blame-read-only-mode
     magit-popup-mode
     magit-popup-sequence-mode)
   "Modes whose evil states are unchanged")
@@ -182,8 +181,6 @@ evil-magit was loaded."
 (defvar evil-magit-section-maps
   '(magit-branch-section-map
     magit-commit-section-map
-    magit-commit-message-section-map
-    magit-error-section-map
     magit-file-section-map
     magit-hunk-section-map
     magit-module-commit-section-map
@@ -207,7 +204,6 @@ evil-magit was loaded."
     magit-processbuf-section-map
     magit-process-section-map
     magit-pulls-section-map
-    magit-unmerged-section-map
     magit-status-section-map
     magit-worktree-section-map)
   "All magit section maps. For testing purposes only at the
@@ -354,14 +350,14 @@ denotes the original magit key for this command.")
     ((,evil-magit-state visual) magit-blob-mode-map "gk" magit-blob-previous "p")
     ((,evil-magit-state visual) git-commit-mode-map "gk" git-commit-prev-message "M-p")
     ((,evil-magit-state visual) git-commit-mode-map "gj" git-commit-next-message "M-n")
-    ((normal) magit-blame-read-only-mode-map "j"    evil-next-visual-line)
-    ((normal) magit-blame-read-only-mode-map "C-j"  magit-blame-next-chunk                 "n")
-    ((normal) magit-blame-read-only-mode-map "gj"   magit-blame-next-chunk                 "n")
-    ((normal) magit-blame-read-only-mode-map "gJ"   magit-blame-next-chunk-same-commit     "N")
-    ((normal) magit-blame-read-only-mode-map "k"    evil-previous-visual-line)
-    ((normal) magit-blame-read-only-mode-map "C-k"  magit-blame-previous-chunk             "p")
-    ((normal) magit-blame-read-only-mode-map "gk"   magit-blame-previous-chunk             "p")
-    ((normal) magit-blame-read-only-mode-map "gK"   magit-blame-previous-chunk-same-commit "P"))
+    ((normal) magit-blame-mode-map "j"    evil-next-visual-line)
+    ((normal) magit-blame-mode-map "C-j"  magit-blame-next-chunk                 "n")
+    ((normal) magit-blame-mode-map "gj"   magit-blame-next-chunk                 "n")
+    ((normal) magit-blame-mode-map "gJ"   magit-blame-next-chunk-same-commit     "N")
+    ((normal) magit-blame-mode-map "k"    evil-previous-visual-line)
+    ((normal) magit-blame-mode-map "C-k"  magit-blame-previous-chunk             "p")
+    ((normal) magit-blame-mode-map "gk"   magit-blame-previous-chunk             "p")
+    ((normal) magit-blame-mode-map "gK"   magit-blame-previous-chunk-same-commit "P"))
   "Evil-magit bindings for minor modes. Each element of
 this list takes the form
 
@@ -396,19 +392,13 @@ denotes the original magit key for this command.")
                                     'all
                                   evil-magit-state)))
 
-(evil-make-overriding-map magit-blame-read-only-mode-map 'normal)
+(evil-make-overriding-map magit-blame-mode-map 'normal)
 
 (eval-after-load 'magit-gh-pulls
   `(evil-make-overriding-map magit-gh-pulls-mode-map ',evil-magit-state))
 
 ;; Need to refresh evil keymaps when blame mode is entered.
 (add-hook 'magit-blame-mode-hook 'evil-normalize-keymaps)
-
-(evil-set-initial-state 'magit-repolist-mode 'motion)
-(evil-define-key 'motion magit-repolist-mode-map
-  (kbd "RET") 'magit-repolist-status
-  (kbd "gr")  'magit-list-repositories)
-(add-hook 'magit-repolist-mode-hook 'evil-normalize-keymaps)
 
 (eval-after-load 'git-rebase
   `(progn
