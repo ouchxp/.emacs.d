@@ -15,3 +15,8 @@ git subtree add --squash --prefix lisp/eyebrowse https://github.com/wasamasa/eye
 git subtree add --squash --prefix lisp/hydra https://github.com/abo-abo/hydra.git master
 git subtree add --squash --prefix lisp/major-mode-hydra.el https://github.com/jerrypnz/major-mode-hydra.el.git master
 git subtree add --squash --prefix lisp/s https://github.com/magnars/s.el.git 1.12.0
+git subtree add --squash --prefix lisp/magit https://github.com/magit/magit.git 2.11.0
+git subtree add --squash --prefix lisp/with-editor https://github.com/magit/with-editor v2.7.0
+git subtree add --squash --prefix lisp/evil-magit https://github.com/emacs-evil/evil-magit.git v0.4.2
+git subtree add --squash --prefix lisp/yaml-mode https://github.com/yoshiki/yaml-mode.git master
+git subtree add --squash --prefix lisp/markdown-mode https://github.com/jrblevin/markdown-mode.git master
