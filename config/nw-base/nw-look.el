@@ -15,62 +15,27 @@
 ;; Work around Emacs frame sizing bug when line-spacing
 ;; is non-zero, which impacts e.g. grizzl, and allow resizing when
 ;; vertical modes are enabled or user has customized nw-resize-minibuffer
-(defvar nw-resize-minibuffer nil
-  "Whether the minibuffer should be resizable.")
+;; (defvar nw-resize-minibuffer nil
+;;   "Whether the minibuffer should be resizable.")
 
-(defun nw-resize-minibuffer-p ()
-  (or (-any? 'featurep '(ivy grizzl ido-vertical-mode))
-      nw-resize-minibuffer))
+;; (defun nw-resize-minibuffer-p ()
+;;   (or (-any? 'featurep '(ivy grizzl ido-vertical-mode))
+;;       nw-resize-minibuffer))
 
-(defun nw-minibuffer-setup-hook ()
-  (if (nw-resize-minibuffer-p)
-      (set (make-local-variable 'line-spacing) 0)
-    (setq resize-mini-windows nil)))
+;; (defun nw-minibuffer-setup-hook ()
+;;   (if (nw-resize-minibuffer-p)
+;;       (set (make-local-variable 'line-spacing) 0)
+;;     (setq resize-mini-windows nil)))
 
-(add-hook 'minibuffer-setup-hook
-          'nw-minibuffer-setup-hook)
+;; (add-hook 'minibuffer-setup-hook
+;;           'nw-minibuffer-setup-hook)
 
-(add-hook 'ido-minibuffer-setup-hook
-          'nw-minibuffer-setup-hook)
+;; (add-hook 'ido-minibuffer-setup-hook
+;;           'nw-minibuffer-setup-hook)
 
 (mapc (lambda (mode)
         (when (fboundp mode) (funcall mode -1)))
       '(scroll-bar-mode tool-bar-mode blink-cursor-mode))
-
-(defvar nw-geometry-file
-  (expand-file-name ".nw-geometry" user-emacs-directory)
-  "The file where frame geometry settings are saved.")
-
-(defun nw-load-frame-geometry ()
-  "Load saved frame geometry settings."
-  (if (file-readable-p nw-geometry-file)
-      (with-temp-buffer
-        (insert-file-contents nw-geometry-file)
-        (read (buffer-string)))
-    '(100 40 0 0)))
-
-(defun nw-save-frame-geometry ()
-  "Save current frame geometry settings."
-  (with-temp-file nw-geometry-file
-    (print (nw-get-geometry) (current-buffer))))
-
-(defun nw-get-geometry ()
-  "Get the current geometry of the active frame."
-  (list (frame-width) (frame-height) (frame-parameter nil 'top) (frame-parameter nil 'left)))
-
-(defun nw-set-geometry ()
-  "Set the default frame geometry using the values loaded from nw-geometry-file."
-  (let ((geom (nw-load-frame-geometry)))
-    (let ((f-width (nth 0 geom))
-          (f-height (nth 1 geom))
-          (f-top (nth 2 geom))
-          (f-left (nth 3 geom)))
-      (setq default-frame-alist
-            (append default-frame-alist
-                    `((width . ,f-width)
-                      (height . ,f-height)
-                      (top . ,f-top)
-                      (left . ,f-left)))))))
 
 (defun nw-maybe-set-default-font (default-font var-pitch-font pitch-font)
   "Set up default fonts when they are not set."
@@ -96,8 +61,6 @@
   "Load defaults for the overall look -- to be called after loading the init file so as to pick up custom settings."
   (if window-system
       (progn
-        (nw-set-geometry)
-        (add-hook 'kill-emacs-hook 'nw-save-frame-geometry)
         (setq-default line-spacing 2)
         (nw-set-fonts)
         (add-to-list 'default-frame-alist `(font . ,nw-default-font))
