@@ -19,7 +19,7 @@
     (setq nw-fixed-pitch-font "Menlo-12")))
 
 ;;; why is this not working
-;(use-package all-the-icons)
+(use-package all-the-icons)
 
 
 (use-package doom-themes

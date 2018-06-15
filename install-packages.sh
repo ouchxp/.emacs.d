@@ -20,3 +20,9 @@ git subtree add --squash --prefix lisp/with-editor https://github.com/magit/with
 git subtree add --squash --prefix lisp/evil-magit https://github.com/emacs-evil/evil-magit.git v0.4.2
 git subtree add --squash --prefix lisp/yaml-mode https://github.com/yoshiki/yaml-mode.git master
 git subtree add --squash --prefix lisp/markdown-mode https://github.com/jrblevin/markdown-mode.git master
+git subtree add --squash --prefix lisp/company https://github.com/company-mode/company-mode master
+git subtree add --squash --prefix lisp/company-lsp https://github.com/tigersoldier/company-lsp.git master
+git subtree add --squash --prefix lisp/lsp-mode https://github.com/emacs-lsp/lsp-mode.git master
+git subtree add --squash --prefix lisp/lsp-ui https://github.com/emacs-lsp/lsp-ui.git master
+git subtree add --squash --prefix lisp/lsp-python https://github.com/emacs-lsp/lsp-python.git master
+git subtree add --squash --prefix lisp/emacs-memoize https://github.com/skeeto/emacs-memoize.git master

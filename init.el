@@ -84,6 +84,11 @@ If argument INTERACTIVE-P is set, log additional information."
 (use-package nw-magit)
 (use-package nw-yaml)
 (use-package nw-markdown)
+(use-package nw-lsp)
+(use-package nw-company)
+(use-package nw-flycheck)
+(use-package nw-python)
+
 
 ;(use-package jp-smartparens)
 ;(use-package jp-ivy)
