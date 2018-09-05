@@ -23,23 +23,41 @@
 (unless noninteractive
   (message "Loading %s..." load-file-name))
 
-;; Initialize package.el
-;;
-;; Most packages are installed using git subtrees, but some packages (such as
-;; flycheck) break unless installed via package.el.
+;; Bootstrap straight
 
-(require 'package)
-(add-to-list 'package-archives '("MELPA" . "https://melpa.org/packages/"))
-(package-initialize)
-(unless package-archive-contents
-  (package-refresh-contents))
+(setq package-enable-at-startup nil)
 
-;; Bootstrap use-package.
+(eval-and-compile
+  (defvar bootstrap-version 3)
+  (defvar bootstrap-file (concat user-emacs-directory "straight/repos/straight.el/bootstrap.el")))
+
+(unless (file-exists-p bootstrap-file)
+  (with-current-buffer
+      (url-retrieve-synchronously
+       "https://raw.githubusercontent.com/raxod502/straight.el/develop/install.el"
+       'silent 'inhibit-cookies)
+    (goto-char (point-max))
+    (eval-print-last-sexp)))
+
+(defconst straight-cache-autoloads t)
+(defconst straight-check-for-modifications 'live)
+(require 'straight bootstrap-file t)
+
+(defconst use-package-verbose t)
+(straight-use-package 'use-package)
+(straight-use-package 'bind-map)
+
+(eval-when-compile
+  (require 'recentf)
+  (require 'use-package))
+
+(defalias 'use-package-handler/:ensure #'use-package-handler/:straight)
+(defalias 'use-package-normalize/:ensure #'use-package-normalize/:straight)
 
 (require 'seq)
 (require 'subr-x)
 
-(defun jp-init/init-load-path (&optional interactive-p)
+(defun nw-init/init-load-path (&optional interactive-p)
   "Add select subdirs of `user-emacs-directory' to the `load-path'.
 If argument INTERACTIVE-P is set, log additional information."
   (interactive "p")
@@ -67,10 +85,7 @@ If argument INTERACTIVE-P is set, log additional information."
           (message "Load path updated. Added: %S" added)
         (message "No change to load-path")))))
 
-(jp-init/init-load-path)
-
-(defconst use-package-verbose t)
-(require 'use-package)
+(nw-init/init-load-path)
 
 ;; major mode hydra
 ;(require 'major-mode-hydra)

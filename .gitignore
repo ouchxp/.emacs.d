@@ -12,3 +12,9 @@ projectile-bookmarks.eld
 .cask
 /recentf
 *~
+
+# Straight
+/var
+/straight/*
+!/straight/versions/
+!/straight/versions/*
