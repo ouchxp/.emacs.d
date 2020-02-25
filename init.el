@@ -21,6 +21,7 @@
 
 ;; install necessary packages
 (straight-use-package 'use-package)
+(straight-use-package 'dash)
 
 (eval-when-compile
   (require 'use-package))
@@ -48,8 +49,9 @@
 (nw-init/init-load-path)
 
 ;; Load features.
+(use-package nw-look)
+(use-package nw-modeline)
 (use-package nw-base)
-(use-package nw-emacs)
 ;; (use-package nw-evil)
 ;; (use-package nw-ivy)
 ;; (use-package nw-projectile)
