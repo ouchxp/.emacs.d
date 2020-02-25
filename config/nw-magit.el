@@ -1,6 +1,9 @@
 (eval-when-compile
   (require 'use-package))
 
+(use-package evil-magit
+  :straight t)
+
 (require 'nw-spacemacs-keys)
 (require 'nw-evil-transient-state)
 
