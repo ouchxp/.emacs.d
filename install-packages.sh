@@ -1,28 +1,28 @@
 git subtree add --squash --prefix lisp/use-package https://github.com/jwiegley/use-package.git master
-git subtree add --squash --prefix lisp/swiper https://github.com/abo-abo/swiper.git master
-git subtree add --squash --prefix lisp/all-the-icons.el https://github.com/domtronn/all-the-icons.el.git master
-git subtree add --squash --prefix lisp/dash.el https://github.com/magnars/dash.el.git master
-git subtree add --squash --prefix lisp/emacs-bind-map https://github.com/justbur/emacs-bind-map.git master
-git subtree add --squash --prefix lisp/evil https://github.com/emacs-evil/evil.git master
-git subtree add --squash --prefix lisp/exec-path-from-shell https://github.com/purcell/exec-path-from-shell.git master
-git subtree add --squash --prefix lisp/doom-themes https://github.com/hlissner/emacs-doom-themes.git master
-git subtree add --squash --prefix lisp/emacs-which-key https://github.com/justbur/emacs-which-key.git v3.0.2
-git subtree add --squash --prefix lisp/rainbow-delimiters https://github.com/Fanael/rainbow-delimiters.git master
-git subtree add --squash --prefix lisp/projectile https://github.com/bbatsov/projectile.git master
-git subtree add --squash --prefix lisp/counsel-projectile https://github.com/ericdanan/counsel-projectile.git master
-git subtree add --squash --prefix lisp/ibuffer-projectile https://github.com/purcell/ibuffer-projectile master
-git subtree add --squash --prefix lisp/eyebrowse https://github.com/wasamasa/eyebrowse.git master
-git subtree add --squash --prefix lisp/hydra https://github.com/abo-abo/hydra.git master
-git subtree add --squash --prefix lisp/major-mode-hydra.el https://github.com/jerrypnz/major-mode-hydra.el.git master
-git subtree add --squash --prefix lisp/s https://github.com/magnars/s.el.git 1.12.0
-git subtree add --squash --prefix lisp/magit https://github.com/magit/magit.git 2.11.0
-git subtree add --squash --prefix lisp/with-editor https://github.com/magit/with-editor v2.7.0
-git subtree add --squash --prefix lisp/evil-magit https://github.com/emacs-evil/evil-magit.git v0.4.2
-git subtree add --squash --prefix lisp/yaml-mode https://github.com/yoshiki/yaml-mode.git master
-git subtree add --squash --prefix lisp/markdown-mode https://github.com/jrblevin/markdown-mode.git master
-git subtree add --squash --prefix lisp/company https://github.com/company-mode/company-mode master
-git subtree add --squash --prefix lisp/company-lsp https://github.com/tigersoldier/company-lsp.git master
-git subtree add --squash --prefix lisp/lsp-mode https://github.com/emacs-lsp/lsp-mode.git master
-git subtree add --squash --prefix lisp/lsp-ui https://github.com/emacs-lsp/lsp-ui.git master
-git subtree add --squash --prefix lisp/lsp-python https://github.com/emacs-lsp/lsp-python.git master
-git subtree add --squash --prefix lisp/emacs-memoize https://github.com/skeeto/emacs-memoize.git master
+# git subtree add --squash --prefix lisp/swiper https://github.com/abo-abo/swiper.git master
+# git subtree add --squash --prefix lisp/all-the-icons.el https://github.com/domtronn/all-the-icons.el.git master
+# git subtree add --squash --prefix lisp/dash.el https://github.com/magnars/dash.el.git master
+# git subtree add --squash --prefix lisp/emacs-bind-map https://github.com/justbur/emacs-bind-map.git master
+# git subtree add --squash --prefix lisp/evil https://github.com/emacs-evil/evil.git master
+# git subtree add --squash --prefix lisp/exec-path-from-shell https://github.com/purcell/exec-path-from-shell.git master
+# git subtree add --squash --prefix lisp/doom-themes https://github.com/hlissner/emacs-doom-themes.git master
+# git subtree add --squash --prefix lisp/emacs-which-key https://github.com/justbur/emacs-which-key.git v3.0.2
+# git subtree add --squash --prefix lisp/rainbow-delimiters https://github.com/Fanael/rainbow-delimiters.git master
+# git subtree add --squash --prefix lisp/projectile https://github.com/bbatsov/projectile.git master
+# git subtree add --squash --prefix lisp/counsel-projectile https://github.com/ericdanan/counsel-projectile.git master
+# git subtree add --squash --prefix lisp/ibuffer-projectile https://github.com/purcell/ibuffer-projectile master
+# git subtree add --squash --prefix lisp/eyebrowse https://github.com/wasamasa/eyebrowse.git master
+# git subtree add --squash --prefix lisp/hydra https://github.com/abo-abo/hydra.git master
+# git subtree add --squash --prefix lisp/major-mode-hydra.el https://github.com/jerrypnz/major-mode-hydra.el.git master
+# git subtree add --squash --prefix lisp/s https://github.com/magnars/s.el.git 1.12.0
+# git subtree add --squash --prefix lisp/magit https://github.com/magit/magit.git 2.11.0
+# git subtree add --squash --prefix lisp/with-editor https://github.com/magit/with-editor v2.7.0
+# git subtree add --squash --prefix lisp/evil-magit https://github.com/emacs-evil/evil-magit.git v0.4.2
+# git subtree add --squash --prefix lisp/yaml-mode https://github.com/yoshiki/yaml-mode.git master
+# git subtree add --squash --prefix lisp/markdown-mode https://github.com/jrblevin/markdown-mode.git master
+# git subtree add --squash --prefix lisp/company https://github.com/company-mode/company-mode master
+# git subtree add --squash --prefix lisp/company-lsp https://github.com/tigersoldier/company-lsp.git master
+# git subtree add --squash --prefix lisp/lsp-mode https://github.com/emacs-lsp/lsp-mode.git master
+# git subtree add --squash --prefix lisp/lsp-ui https://github.com/emacs-lsp/lsp-ui.git master
+# git subtree add --squash --prefix lisp/lsp-python https://github.com/emacs-lsp/lsp-python.git master
+# git subtree add --squash --prefix lisp/emacs-memoize https://github.com/skeeto/emacs-memoize.git master

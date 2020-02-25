@@ -19,45 +19,23 @@
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
 
-(defconst straight-cache-autoloads t)
-(defconst straight-use-package-by-default t)
-(defconst straight-check-for-modifications 'live)
-;; (require 'straight bootstrap-file t)
-
-;; (defconst use-package-verbose t)
-;; (straight-use-package 'use-package)
-;; (straight-use-package 'bind-map)
+;; install necessary packages
+(straight-use-package 'use-package)
 
 (eval-when-compile
-  (require 'recentf)
   (require 'use-package))
-
-
-;; (defalias 'use-package-handler/:ensure #'use-package-handler/:straight)
-;; (defalias 'use-package-normalize/:ensure #'use-package-normalize/:straight)
-
 (require 'seq)
 (require 'subr-x)
 
+;; Init load path
 (defun nw-init/init-load-path (&optional interactive-p)
-  "Add select subdirs of `user-emacs-directory' to the `load-path'.
-If argument INTERACTIVE-P is set, log additional information."
   (interactive "p")
   (let* ((before load-path)
          (lisp-dir (expand-file-name "lisp" user-emacs-directory))
-         (config-dir (expand-file-name "config" user-emacs-directory))
-         (git-subtrees
-          (seq-filter #'file-directory-p
-                      (directory-files lisp-dir t "^[^.]")))
-         (config-subtrees
-          (seq-filter #'file-directory-p
-                      (directory-files config-dir t "^[^.]"))))
-    (dolist (path (append (list lisp-dir config-dir) config-subtrees git-subtrees))
+         (config-dir (expand-file-name "config" user-emacs-directory)))
+    (dolist (path (list lisp-dir config-dir))
       (add-to-list 'load-path path)
-      (add-to-list 'Info-default-directory-list path)
-      (add-to-list 'load-path (concat path "/emacs"))
-      (add-to-list 'load-path (concat path "/elisp"))
-      (add-to-list 'load-path (concat path "/lisp")))
+      (add-to-list 'Info-default-directory-list path))
 
     (setq load-path (seq-filter #'file-directory-p load-path))
     (setq Info-default-directory-list (seq-filter #'file-directory-p Info-default-directory-list))
@@ -69,11 +47,9 @@ If argument INTERACTIVE-P is set, log additional information."
 
 (nw-init/init-load-path)
 
-;; major mode hydra
-;(require 'major-mode-hydra)
-
 ;; Load features.
-(straight-use-package nw-base)
+(use-package nw-base)
+(use-package nw-emacs)
 ;; (use-package nw-evil)
 ;; (use-package nw-ivy)
 ;; (use-package nw-projectile)
@@ -109,7 +85,6 @@ If argument INTERACTIVE-P is set, log additional information."
 ;(use-package jp-php)
 ;(use-package jp-puppet)
 ;(use-package jp-protobuf)
-
 
 (provide 'init)
 
