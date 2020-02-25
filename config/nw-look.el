@@ -83,6 +83,9 @@
 (use-package dimmer
   :straight t
   :config
-  (dimmer-mode))
+  (progn
+    (dimmer-mode t)
+    (setq dimmer-adjustment-mode :foreground)
+    (setq dimmer-fraction 0.3)))
 
 (provide 'nw-look)

@@ -14,6 +14,16 @@
 (global-set-key (kbd "<home>") 'beginning-of-line)
 (global-set-key (kbd "<end>") 'end-of-line)
 
+;; ensure that emacs can find shell binaries e.g. ag
+(use-package exec-path-from-shell
+  :straight t
+  :if (memq window-system '(mac ns x))
+  :config
+  (progn
+    (setq exec-path-from-shell-arguments '("-l"))
+    (add-to-list 'exec-path-from-shell-variables "GOPATH")
+    (exec-path-from-shell-initialize)))
+
 (use-package nw-look
   :config
   (progn
