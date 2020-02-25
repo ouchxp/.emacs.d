@@ -6,32 +6,35 @@
 (setq gc-cons-threshold (* 800 1024))
 
 ;; Bootstrap straight
-(eval-and-compile
-  (defvar bootstrap-version 3)
-  (defvar bootstrap-file (concat user-emacs-directory "straight/repos/straight.el/bootstrap.el")))
-
-(unless (file-exists-p bootstrap-file)
-  (with-current-buffer
-      (url-retrieve-synchronously
-       "https://raw.githubusercontent.com/raxod502/straight.el/develop/install.el"
-       'silent 'inhibit-cookies)
-    (goto-char (point-max))
-    (eval-print-last-sexp)))
+(defvar bootstrap-version)
+(let ((bootstrap-file
+       (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
+      (bootstrap-version 5))
+  (unless (file-exists-p bootstrap-file)
+    (with-current-buffer
+        (url-retrieve-synchronously
+         "https://raw.githubusercontent.com/raxod502/straight.el/develop/install.el"
+         'silent 'inhibit-cookies)
+      (goto-char (point-max))
+      (eval-print-last-sexp)))
+  (load bootstrap-file nil 'nomessage))
 
 (defconst straight-cache-autoloads t)
+(defconst straight-use-package-by-default t)
 (defconst straight-check-for-modifications 'live)
-(require 'straight bootstrap-file t)
+;; (require 'straight bootstrap-file t)
 
-(defconst use-package-verbose t)
-(straight-use-package 'use-package)
-(straight-use-package 'bind-map)
+;; (defconst use-package-verbose t)
+;; (straight-use-package 'use-package)
+;; (straight-use-package 'bind-map)
 
 (eval-when-compile
   (require 'recentf)
   (require 'use-package))
 
-(defalias 'use-package-handler/:ensure #'use-package-handler/:straight)
-(defalias 'use-package-normalize/:ensure #'use-package-normalize/:straight)
+
+;; (defalias 'use-package-handler/:ensure #'use-package-handler/:straight)
+;; (defalias 'use-package-normalize/:ensure #'use-package-normalize/:straight)
 
 (require 'seq)
 (require 'subr-x)
@@ -70,18 +73,18 @@ If argument INTERACTIVE-P is set, log additional information."
 ;(require 'major-mode-hydra)
 
 ;; Load features.
-(use-package nw-base)
-(use-package nw-evil)
-(use-package nw-ivy)
-(use-package nw-projectile)
-(use-package nw-eyebrowse)
-(use-package nw-magit)
-(use-package nw-yaml)
-(use-package nw-markdown)
-(use-package nw-lsp)
-(use-package nw-company)
-(use-package nw-flycheck)
-(use-package nw-python)
+(straight-use-package nw-base)
+;; (use-package nw-evil)
+;; (use-package nw-ivy)
+;; (use-package nw-projectile)
+;; (use-package nw-eyebrowse)
+;; (use-package nw-magit)
+;; (use-package nw-yaml)
+;; (use-package nw-markdown)
+;; (use-package nw-lsp)
+;; (use-package nw-company)
+;; (use-package nw-flycheck)
+;; (use-package nw-python)
 
 
 ;(use-package jp-smartparens)
