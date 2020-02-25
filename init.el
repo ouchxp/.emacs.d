@@ -55,7 +55,7 @@
 (use-package nw-evil)
 (use-package nw-ivy)
 (use-package nw-projectile)
-(use-package nw-eyebrowse)
+(use-package nw-layout)
 (use-package nw-magit)
 ;; (use-package nw-yaml)
 ;; (use-package nw-markdown)
