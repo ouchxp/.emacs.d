@@ -1,32 +1,11 @@
 ;;; init.el --- Startup file for Emacs.  -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2017 Jerry Peng
-
-;; Author: Jerry Peng <pr2jerry@gmail.com>
-
-;;; Commentary:
-
-;; The init system and the config structure are based on Chris
-;; Barrett's amazing work: https://github.com/chrisbarrett/.emacs.d
-
-;; Declares some variables and bootstraps the rest of the configuration.
-;;
-;; One main difference from other configurations out there is that I use git subtrees for
-;; many core packages, instead of relying on the Emacs package manager.
+;; Author: Nan Wu
 
 ;;; Code:
-
 (setq gc-cons-threshold (* 800 1024))
 
-(defconst emacs-start-time (current-time))
-
-(unless noninteractive
-  (message "Loading %s..." load-file-name))
-
 ;; Bootstrap straight
-
-(setq package-enable-at-startup nil)
-
 (eval-and-compile
   (defvar bootstrap-version 3)
   (defvar bootstrap-file (concat user-emacs-directory "straight/repos/straight.el/bootstrap.el")))
@@ -127,20 +106,6 @@ If argument INTERACTIVE-P is set, log additional information."
 ;(use-package jp-php)
 ;(use-package jp-puppet)
 ;(use-package jp-protobuf)
-
-;;; Print overall startup time.
-
-(unless noninteractive
-  (let ((elapsed (float-time (time-subtract (current-time) emacs-start-time))))
-    (message "Loading %s...done (%.3fs)" load-file-name elapsed))
-
-  (add-hook 'after-init-hook
-            `(lambda ()
-               (let ((elapsed (float-time (time-subtract (current-time)
-                                                         emacs-start-time))))
-                 (message "Loading %s...done (%.3fs) [after-init]"
-                          ,load-file-name elapsed)))
-            t))
 
 
 (provide 'init)
