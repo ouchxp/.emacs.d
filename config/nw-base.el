@@ -111,9 +111,9 @@
 (use-package nw-spacemacs-keys
   :preface
   (progn
-    (autoload 'evil-window-next "evil-commands")
-    (autoload 'evil-window-split "evil-commands")
-    (autoload 'evil-window-vsplit "evil-commands")
+    ;; (autoload 'evil-window-next "evil-commands")
+    ;; (autoload 'evil-window-split "evil-commands")
+    ;; (autoload 'evil-window-vsplit "evil-commands")
 
     (defun nw-leader-keys/reload-file ()
       "Revisit the current file."
@@ -181,12 +181,12 @@
       "t F" #'toggle-frame-fullscreen
 
       "w =" #'balance-windows
-      "w w" #'evil-window-next
+      "w w" #'other-window
       "w o" #'delete-other-windows
       "w d" #'delete-window
-      "w r" #'evil-window-rotate-downwards
-      "w -" #'evil-window-split
-      "w /" #'evil-window-vsplit)))
+      ;; "w r" #'evil-window-rotate-downwards
+      "w -" #'split-window-vertically
+      "w /" #'split-window-horizontally)))
 
 ;; rainbow delimiters
 (use-package rainbow-delimiters
