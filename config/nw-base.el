@@ -1,6 +1,9 @@
 (eval-when-compile
   (require 'use-package))
 
+;; maximized by default
+(add-hook 'window-setup-hook 'toggle-frame-maximized t)
+
 (defconst nw-emacs-cache-directory
   (concat user-emacs-directory ".cache"))
 
@@ -9,8 +12,8 @@
 (setq scroll-margin 0)
 (setq scroll-conservatively 101)
 
-(delete-selection-mode 1)
-
+;; setup global keys
+(global-set-key (kbd "A-<f10>") 'toggle-frame-maximized)
 (global-set-key (kbd "<home>") 'beginning-of-line)
 (global-set-key (kbd "<end>") 'end-of-line)
 
@@ -128,6 +131,7 @@
     (spacemacs-keys-set-leader-keys
       "u"   #'universal-argument
       "SPC" #'execute-extended-command
+      "<escape>" #'keyboard-escape-quit
       ;; "TAB" #'rk/alternate-buffer
       ;; "|"   #'rk/toggle-window-split
 
