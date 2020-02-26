@@ -131,7 +131,7 @@
     (spacemacs-keys-set-leader-keys
       "u"   #'universal-argument
       "SPC" #'execute-extended-command
-      "<escape>" #'keyboard-escape-quit
+      ;; "<escape>" #'keyboard-escape-quit
       ;; "TAB" #'rk/alternate-buffer
       ;; "|"   #'rk/toggle-window-split
 
@@ -191,6 +191,15 @@
       ;; "w r" #'evil-window-rotate-downwards
       "w -" #'split-window-vertically
       "w /" #'split-window-horizontally)))
+
+;; esc always quits
+;; via: https://superuser.com/questions/669902/is-it-possible-to-get-esc-to-behave-as-an-actual-escape-key/945245#945245
+(define-key minibuffer-local-map [escape] 'keyboard-escape-quit)
+(define-key minibuffer-local-ns-map [escape] 'keyboard-escape-quit)
+(define-key minibuffer-local-completion-map [escape] 'keyboard-escape-quit)
+(define-key minibuffer-local-must-match-map [escape] 'keyboard-escape-quit)
+(define-key minibuffer-local-isearch-map [escape] 'keyboard-escape-quit)
+(global-set-key [escape] 'keyboard-escape-quit)
 
 ;; rainbow delimiters
 (use-package rainbow-delimiters
