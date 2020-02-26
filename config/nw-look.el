@@ -83,6 +83,7 @@
 (use-package dimmer
   :straight t
   :config
+  (dimmer-configure-hydra)
   (progn
     (dimmer-mode t)
     (setq dimmer-adjustment-mode :foreground)
