@@ -11,6 +11,10 @@
   (concat user-emacs-directory ".cache"))
 
 ;; better scrolling
+;; (use-package yascroll
+;;   :straight t)
+
+;; (global-yascroll-bar-mode 1)
 (setq scroll-preserve-screen-position t)
 (setq scroll-margin 0)
 (setq scroll-conservatively 101)
