@@ -10,6 +10,7 @@ projectile-bookmarks.eld
 /bookmarks
 /cider-history
 .cask
+.emacs.desktop*
 /recentf
 *~
 

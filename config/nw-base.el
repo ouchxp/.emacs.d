@@ -1,8 +1,11 @@
 (eval-when-compile
   (require 'use-package))
 
+;; enable desktop mode, so it reopen previous sessions
+(desktop-save-mode 1)
+
 ;; maximized by default
-(add-hook 'window-setup-hook 'toggle-frame-maximized t)
+(add-to-list 'initial-frame-alist '(fullscreen . maximized))
 
 (defconst nw-emacs-cache-directory
   (concat user-emacs-directory ".cache"))
